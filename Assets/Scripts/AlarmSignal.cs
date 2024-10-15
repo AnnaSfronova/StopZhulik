@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AlarmSignal : MonoBehaviour
 {
     [SerializeField] private House _house;
@@ -48,7 +49,6 @@ public class AlarmSignal : MonoBehaviour
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
-            _coroutine = null;
         }
 
         _coroutine = StartCoroutine(ChangeVolume(targetVolume));
